@@ -1,10 +1,16 @@
-import { Link } from "expo-router";
-import { TouchableOpacity } from "react-native";
-import { Text, StyleSheet, Image, TextInput } from "react-native";
+import { Link, useRouter } from "expo-router";
+import { Text, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 
 export default function SignUpPage() {
+
+    const router = useRouter();
+
+    const loginCon = () => {
+        router.push("/")
+    }
+
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
@@ -16,10 +22,10 @@ export default function SignUpPage() {
                 <TextInput style={styles.textBox} placeholder="Enter Password"></TextInput>
                 <TextInput style={styles.textBox} placeholder="Renter Password"></TextInput>
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Sign Up</Text>
+                <TouchableOpacity style={styles.button} onPress={loginCon}>
+                    <Text style={styles.buttonText}>SIGN UP</Text>
                 </TouchableOpacity>
-                <Text style={styles.text}>Already have an account? <Link href="/login" style={styles.link}> Sign in</Link></Text>
+                <Text style={styles.text}>Already have an account? <Link href="/login" style={styles.link}> LOGIN</Link></Text>
             </SafeAreaView>
         </SafeAreaProvider>
     );
@@ -72,6 +78,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     text: {
+        margin: 8,
         color: "white",
         textAlign: "center"
     },
