@@ -25,7 +25,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   title:  {
-      color: "#4BBFEB",
+      color: "#c",
       fontWeight: "bold",
       fontSize: 20,
       textAlign: "center",

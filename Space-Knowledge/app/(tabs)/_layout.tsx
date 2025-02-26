@@ -6,7 +6,13 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{tabBarActiveTintColor: '#4BBFEB'}}>
-      <Tabs.Screen name='starObserver' />
+      <Tabs.Screen name='starObserver' options={{ tabBarIcon: ({focused, color}) => (
+        <Ionicons 
+        name={focused ? "map" : "map-outline"}
+        color={color}
+        size={20}
+        />
+      )}}/>
       <Tabs.Screen name='quizzes' options={{ tabBarIcon: ({focused, color}) => (
         <MaterialCommunityIcons 
         name={focused ? "notebook" : "notebook-outline"}
@@ -15,14 +21,14 @@ export default function TabLayout() {
         />
       )}}/>
       <Tabs.Screen name='index' options={{headerShown: true, headerLeft: () => (
-        <Image source={require('../../assets/images/space-splash.png')} style={{width: 30, height: 30, borderRadius: 20}}></Image>
+        <Image source={require('../../assets/images/space-splash.png')} style={{width: 30, height: 30, borderRadius: 20, margin: 5}}></Image> // Create Link for account
       ),
       headerTitle: () => (
-        <Text>Space Knowledge</Text>
+        <Text>Space Knowledge</Text> // TODO Create Link For settings and create settings page
       ),
       headerTitleAlign: "center",
       headerRight: () => (
-        <Text>Settings</Text>
+        <Text style={{margin: 5}}>Settings</Text>
       ), tabBarIcon: ({ focused, color}) => (
         <Ionicons 
         name={focused ? "home-sharp" : "home-outline"}

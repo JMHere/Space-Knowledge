@@ -2,9 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 interface CustomHeaderProps {
-    title: string; // Title must be a string
-    onBackPress?: () => void; // Optional callback for the back button
-    onMenuPress?: () => void; // Optional callback for the menu button
+    title: string;
+    onBackPress?: () => void;
   }
 
 const CustomHeader= ({ title, onBackPress }: CustomHeaderProps) => {
@@ -23,7 +22,7 @@ const CustomHeader= ({ title, onBackPress }: CustomHeaderProps) => {
 const styles = StyleSheet.create({
   header: {
     height: 60,
-    backgroundColor: '#6200ee',
+    backgroundColor: '#D9D9D9',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   title: {
-    color: '#fff',
+    color: '#4BBFEB',
     fontSize: 20,
     fontWeight: 'bold',
     flex: 1,

@@ -7,7 +7,7 @@ export default function FirstPage() {
   const router = useRouter();
 
   const signUpPage = () => {
-    router.push("/singUp")
+    router.push("/signUp")
   }
 
   return (
